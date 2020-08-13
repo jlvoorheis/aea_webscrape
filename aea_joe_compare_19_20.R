@@ -3,7 +3,8 @@ library(rvest)
 library(lubridate)
 library(tidylog)
 
-#prerequisite: save the full AEA JOE ads for 2019 and 2020 to date as HTML. 
+#This tries to pull the full AEA JOE ads for 2019 and 2020 to date as HTML, but might not work in future runs;
+#Might have to update the 2020 address each time, which is annoying
 
 aea_19 <- read_html("https://www.aeaweb.org/joe/listings?q=eNplT1GqAkEMu0u_faD-uQcQBO9Q6kxdR2tnaWeVRby7FVxcEd5fSNI0ecC-eCva-7baFboHFEVKrdwYOh1FFnDh6V4tozNZOkEHsFww57BUnS1nlhkW9zFOYb1cXG3-luvwVit9UZLdPyXVUZtNaNz_hDndOOOxSmbzmUykuWRqjJ6Mrgf51jNOrA2ryjRT8pmEUZsNDyHErODa-G6NFL9lGIIlkcAD9Z-45_MFRVRe-A,,")
 try1 <- aea_19 %>% html_nodes(".listing-item-header-date-posted") %>% html_text()
